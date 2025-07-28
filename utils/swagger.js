@@ -1,4 +1,7 @@
 import swaggerJSDoc from "swagger-jsdoc"
+ 
+const nodEnv = process.env.NODE_ENV
+
 
 const options = {
   definition: {
@@ -10,7 +13,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:5000'
+        url: nodEnv == "development" ? 'http://localhost:5000' : 'https://incomeapiproject.onrender.com'
       }
     ],
     components: {
