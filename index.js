@@ -31,7 +31,7 @@ const limiter = rateLimit({
     message: "Too many requests from this IP, please try again later"
 
 })
-app.use("/",swaggerUI.serve,swaggerUI.setup(swaggerJSdOp))
+app.use("/docs",swaggerUI.serve,swaggerUI.setup(swaggerJSdOp))
 app.use(limiter)
 
 app.use("/auth",authUserRoute)
